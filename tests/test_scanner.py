@@ -38,7 +38,7 @@ def test_calculate_job_duration(log_file):
     track_jobs = track_pid_jobs(scanned_logs)
     job_duration = calculate_job_duration(track_jobs)
     
-    # assert we can calculate the duration if start_time is present
+    # assert that the duration is present
     for pid, job in job_duration.items():
         assert job['duration'] is not None
 
