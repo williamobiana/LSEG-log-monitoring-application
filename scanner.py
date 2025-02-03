@@ -18,6 +18,7 @@ def scan_log_file(file_path):
                 'pid': log_parts[3]
             })
 
+        print(f"Log file scanned successfully")
         return scanned_logs
 
     except Exception as e:
@@ -50,6 +51,7 @@ def track_pid_jobs(scanned_logs):
         elif 'END' in log_entry:
             pid_job_tracker[pid]['end_time'] = timestamp
 
+    print(f"PID jobs tracked successfully")
     return pid_job_tracker
 
 
@@ -85,10 +87,11 @@ def calculate_job_duration(pid_job_tracker):
                 'duration': "Incomplete (No End Time)"
             }
 
+    print(f"Job duration calculated successfully")
     return pid_job_duration
     
 
-def generate_report(pid_job_duration, file="report.txt"):
+def generate_report(pid_job_duration, file="report.log"):
     # Generate a report.txt with warnings and errors based on the job duration
     with open(file, 'w') as report:
         report.write("-----Job Report-----\n")
@@ -125,5 +128,4 @@ def generate_report(pid_job_duration, file="report.txt"):
                 report.write("ERROR: Job duration exceeds 10 minutes\n")
                 report.write("-" * 40 + "\n")
             
-
-    print(f"Report generated, Please open report.txt for details")
+    print(f"Report generated, Please open report.log to see WARNINGS and ERRORS")

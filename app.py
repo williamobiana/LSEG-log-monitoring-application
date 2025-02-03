@@ -8,12 +8,12 @@ if __name__ == "__main__":
     track_jobs = track_pid_jobs(scanned_logs)
     job_duration = calculate_job_duration(track_jobs)
 
-    for pid, job in job_duration.items():
-        print(f"PID: {pid}")
-        print(f"Job Description: {job['job_description']}")
-        print(f"Start Time: {job['start_time']}")
-        print(f"End Time: {job['end_time']}")
-        print(f"Duration: {job['duration']}")
-        print("-" * 30)        
+    #for pid, job in job_duration.items():
+    #    print(f"PID: {pid}")
+    #    print(f"Job Description: {job['job_description']}")
+    #    print(f"Start Time: {job['start_time']}")
+    #    print(f"End Time: {job['end_time']}")
+    #    print(f"Duration: {job['duration']}")
+    #    print("-" * 30)        
 
     generate_report(job_duration)
