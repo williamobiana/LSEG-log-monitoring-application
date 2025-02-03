@@ -31,3 +31,14 @@ def test_track_pid_jobs(log_file):
         assert 'start_time' in job
         assert 'end_time' in job
 
+
+# Test the calculate_job_duration function
+def test_calculate_job_duration(log_file):
+    scanned_logs = scan_log_file(log_file)
+    track_jobs = track_pid_jobs(scanned_logs)
+    job_duration = calculate_job_duration(track_jobs)
+    
+    # assert we can calculate the duration if start_time is present
+    for pid, job in job_duration.items():
+        assert job['duration'] is not None
+
