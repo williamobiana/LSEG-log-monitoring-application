@@ -19,3 +19,15 @@ def test_scan_log_file(log_file):
         assert 'log_entry' in log
         assert 'pid' in log
 
+
+# Test the track_pid_jobs function
+def test_track_pid_jobs(log_file):
+    scanned_logs = scan_log_file(log_file)
+    track_jobs = track_pid_jobs(scanned_logs)
+
+    # assert the pid, job_description, start_time and end_time exist in the track jobs
+    for pid, job in track_jobs.items():
+        assert 'job_description' in job
+        assert 'start_time' in job
+        assert 'end_time' in job
+
