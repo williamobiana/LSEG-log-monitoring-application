@@ -45,6 +45,14 @@ To run the application, execute the following command:
 ```sh
 python3 app/app.py
 ```
+```
+# Output
+Log file scanned successfully
+PID jobs tracked successfully
+Job duration calculated successfully
+Report generated, Please open report.log to see WARNINGS and ERRORS
+```
+
 
 ## Running Tests
 
