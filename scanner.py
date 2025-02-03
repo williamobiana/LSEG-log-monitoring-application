@@ -116,7 +116,7 @@ def generate_report(pid_job_duration, file="report.txt"):
             report.write(f"Duration: {duration}\n")
 
             # Add warnings and errors based on the duration
-            if duration_minutes > 5:
+            if duration_minutes > 5 and duration_minutes <= 10:
                 report.write("WARNING: Job duration exceeds 5 minutes\n")
             if duration_minutes > 10:
                 report.write("ERROR: Job duration exceeds 10 minutes\n")

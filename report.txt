@@ -13,21 +13,18 @@ PID 81258 (background job wmy)
 Start Time: 11:36:58
 End Time: 11:51:44
 Duration: 0:14:46
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 45135 (scheduled task 515)
 Start Time: 11:37:14
 End Time: 11:49:37
 Duration: 0:12:23
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 39547 (scheduled task 051)
 Start Time: 11:37:53
 End Time: 11:49:22
 Duration: 0:11:29
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 10515 (scheduled task 386)
@@ -65,7 +62,6 @@ PID 70808 (scheduled task 182)
 Start Time: 11:44:43
 End Time: 12:18:26
 Duration: 0:33:43
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 47139 (scheduled task 946)
@@ -135,7 +131,6 @@ PID 39860 (scheduled task 460)
 Start Time: 11:53:17
 End Time: 12:13:09
 Duration: 0:19:52
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 87570 (scheduled task 794)
@@ -153,14 +148,12 @@ PID 85742 (scheduled task 064)
 Start Time: 11:55:16
 End Time: 12:07:33
 Duration: 0:12:17
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 22003 (scheduled task 004)
 Start Time: 11:55:29
 End Time: 12:06:42
 Duration: 0:11:13
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 64591 (scheduled task 521)
@@ -199,7 +192,6 @@ PID 52532 (background job tqc)
 Start Time: 12:00:03
 End Time: 12:13:56
 Duration: 0:13:53
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 16168 (scheduled task 773)
@@ -219,14 +211,12 @@ PID 23703 (scheduled task 374)
 Start Time: 12:04:57
 End Time: 12:18:23
 Duration: 0:13:26
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 62401 (scheduled task 936)
 Start Time: 12:05:59
 End Time: 12:16:23
 Duration: 0:10:24
-WARNING: Job duration exceeds 5 minutes
 ERROR: Job duration exceeds 10 minutes
 ----------------------------------------
 PID 81470 (background job wiy)
