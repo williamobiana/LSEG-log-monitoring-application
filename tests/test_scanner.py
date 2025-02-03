@@ -42,3 +42,24 @@ def test_calculate_job_duration(log_file):
     for pid, job in job_duration.items():
         assert job['duration'] is not None
 
+
+# Test the generate_report function
+def test_generate_report(log_file, file = 'report.log'):
+    scanned_logs = scan_log_file(log_file)
+    track_jobs = track_pid_jobs(scanned_logs)
+    job_duration = calculate_job_duration(track_jobs)
+
+    generate_report(job_duration, file)
+
+    # read the content of the report
+    content = open(file, 'r').read()
+    
+    # assert the content of the report
+    assert content is not None
+    assert 'PID' in content
+    assert 'Start Time' in content
+    assert 'End Time' in content
+    assert 'Duration' in content
+    assert 'WARNING' in content
+    assert 'ERROR' in content
+
