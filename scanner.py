@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 
 def scan_log_file(file_path):
     try:
@@ -87,3 +87,40 @@ def calculate_job_duration(pid_job_tracker):
 
     return pid_job_duration
     
+
+def generate_report(pid_job_duration, file="report.txt"):
+    # Generate a report.txt with warnings and errors based on the job duration
+    with open(file, 'w') as report:
+        report.write("-----Job Report-----\n")
+
+        for pid, job in pid_job_duration.items():
+            job_description = job['job_description']
+            start_time = job['start_time']
+            end_time = job['end_time']
+            duration = job['duration']
+
+            # If the duration is incomplete, continue to the next job
+            if duration == "Incomplete (No End Time)":
+                report.write(f"PID: {pid}, {job_description}: Incomplete (No End Time)\n")
+                report.write("-" * 40 + "\n")
+                continue
+            
+            # Convert the duration to seconds and minutes
+            duration_seconds = duration.total_seconds()
+            duration_minutes = duration_seconds / 60
+
+            # Write the job details to the report
+            report.write(f"PID {pid} ({job_description})\n")
+            report.write(f"Start Time: {start_time}\n")
+            report.write(f"End Time: {end_time}\n")
+            report.write(f"Duration: {duration}\n")
+
+            # Add warnings and errors based on the duration
+            if duration_minutes > 5:
+                report.write("WARNING: Job duration exceeds 5 minutes\n")
+            if duration_minutes > 10:
+                report.write("ERROR: Job duration exceeds 10 minutes\n")
+
+            report.write("-" * 40 + "\n")
+
+    print(f"Report generated, Please open report.txt for details")
