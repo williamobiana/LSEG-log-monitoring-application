@@ -109,18 +109,21 @@ def generate_report(pid_job_duration, file="report.txt"):
             duration_seconds = duration.total_seconds()
             duration_minutes = duration_seconds / 60
 
-            # Write the job details to the report
-            report.write(f"PID {pid} ({job_description})\n")
-            report.write(f"Start Time: {start_time}\n")
-            report.write(f"End Time: {end_time}\n")
-            report.write(f"Duration: {duration}\n")
-
-            # Add warnings and errors based on the duration
+            # Add warnings and errors to report.txt based on the duration
             if duration_minutes > 5 and duration_minutes <= 10:
+                report.write(f"PID {pid} ({job_description})\n")
+                report.write(f"Start Time: {start_time}\n")
+                report.write(f"End Time: {end_time}\n")
+                report.write(f"Duration: {duration}\n")                
                 report.write("WARNING: Job duration exceeds 5 minutes\n")
+                report.write("-" * 40 + "\n")
             if duration_minutes > 10:
+                report.write(f"PID {pid} ({job_description})\n")
+                report.write(f"Start Time: {start_time}\n")
+                report.write(f"End Time: {end_time}\n")
+                report.write(f"Duration: {duration}\n")                
                 report.write("ERROR: Job duration exceeds 10 minutes\n")
-
-            report.write("-" * 40 + "\n")
+                report.write("-" * 40 + "\n")
+            
 
     print(f"Report generated, Please open report.txt for details")
