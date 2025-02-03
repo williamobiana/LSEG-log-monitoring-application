@@ -35,11 +35,21 @@ def track_pid_jobs(scanned_logs):
         log_entry = log['log_entry']
         pid = log['pid']
 
+        # If the PID is not in the tracker, add it with the job description
         if pid not in pid_job_tracker:
             pid_job_tracker[pid] = {
-                'start_time': timestamp,
-                'end_time': timestamp,
-                'jobs': []
+            'job_description': job,
+            'start_time': None,
+            'end_time': None
             }
+        
+        # Track the start and end times of the job
+        if 'START' in log_entry:
+            pid_job_tracker[pid]['start_time'] = timestamp
+
+        elif 'END' in log_entry:
+            pid_job_tracker[pid]['end_time'] = timestamp
+
+    return pid_job_tracker
 
     
