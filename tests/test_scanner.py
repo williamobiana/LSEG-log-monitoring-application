@@ -1,9 +1,9 @@
 import pytest
-from scanner import scan_log_file, track_pid_jobs, calculate_job_duration, generate_report
+from app.scanner import scan_log_file, track_pid_jobs, calculate_job_duration, generate_report
 
 @pytest.fixture
 def log_file():
-    log_file_path = 'logs[83].log'
+    log_file_path = 'logs/logs[83].log'
     return log_file_path
 
 # Test the scan_log_file function
