@@ -1,6 +1,4 @@
-import os
 import pytest
-from datetime import datetime, timedelta
 from scanner import scan_log_file, track_pid_jobs, calculate_job_duration, generate_report
 
 @pytest.fixture
@@ -53,7 +51,7 @@ def test_generate_report(log_file, file = 'report.log'):
 
     # read the content of the report
     content = open(file, 'r').read()
-    
+
     # assert the content of the report
     assert content is not None
     assert 'PID' in content
