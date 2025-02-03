@@ -21,7 +21,7 @@ The project consists of the following main files:
 ### Prerequisites
 
 - Python 3.x
-- Pip
+- Pip3
 - Required Python packages (`requirements.txt`)
 
 ### Installation
